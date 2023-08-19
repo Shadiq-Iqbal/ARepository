@@ -1,0 +1,32 @@
+#include <iostream>
+
+int main() 
+{
+    //size of arr  
+    int *arr_size {new int{7}};
+
+    //dynamic arr that can be deleted
+    int *p_scores {new(std::nothrow) int[*arr_size] {1,2,3,4,5,6,7}};
+
+    //for-loop to print arr
+    for(int i = 0; i < *arr_size; ++i) 
+    {
+        //if we reach the end, don't print comma
+        if(i == *arr_size - 1) {
+            std::cout << p_scores[i] << std::flush;
+        } else {
+            std::cout << p_scores[i] << ", " << std::flush;   
+        }
+    }
+
+    //Delete the size of arr
+    delete arr_size;
+    arr_size = nullptr;
+
+    //Delete the whole arr
+    delete p_scores;
+    p_scores = nullptr;
+
+    //Everything is fine, so return 0
+    return 0;
+}
