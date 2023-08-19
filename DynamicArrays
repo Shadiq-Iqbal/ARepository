@@ -24,7 +24,7 @@ int main()
     arr_size = nullptr;
 
     //Delete the whole arr
-    delete p_scores;
+    delete[] p_scores;
     p_scores = nullptr;
 
     //Everything is fine, so return 0
