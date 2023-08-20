@@ -3,18 +3,25 @@
 int main() 
 {
     //dynamic arr that can be deleted
-    int *p_scores {new(std::nothrow) int[] {1,2,3,4,5,6,7}};
-
+    int *p_scores {new(std::nothrow) int[] {1,2,3,4,5,6,7,8}};
+    
+    //size of arr that can be deleted
+    int *arr_size {new int{sizeof(p_scores)}};
+    
     //for-loop to print arr
-    for(int i = 0; i < sizeof(p_scores); ++i) 
+    for(int i = 0; i < *arr_size; ++i) 
     {
         //if we reach the end, don't print comma
-        if(i == sizeof(p_scores) - 1 && (sizeof(p_scores) - 1) != 0) {
-            std::cout << p_scores[i] << std::flush;
+        if(p_scores[i] == 0) {
+            break;
         } else {
             std::cout << p_scores[i] << ", " << std::flush;   
         }
     }
+
+    //Delete arr size
+    delete arr_size;
+    arr_size = nullptr;
 
     //Delete the whole arr
     delete[] p_scores;
