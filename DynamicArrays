@@ -2,8 +2,14 @@
 
 int main() 
 {
+    /*
+        Note that these pointer arrays can only
+        contain only 8 elements, you can search this up
+    */
+    
     //dynamic arr that can be deleted
-    int *p_scores {new(std::nothrow) int[] {1,2,3,4,5,6,7,8}};
+    int *p_scores {new(std::nothrow) int[] {-81, 33, -20, 
+        21, 42, 52, -22}};
     
     //size of arr that can be deleted
     int *arr_size {new int{sizeof(p_scores)}};
@@ -15,7 +21,7 @@ int main()
         if(p_scores[i] == 0) {
             break;
         } else {
-            //Print the value of the element
+            //Print the value of element
             std::cout << "Value of element " << i << ": " 
                 << p_scores[i] << std::endl << std::flush;
         }
@@ -25,7 +31,7 @@ int main()
     std::cout << "-------------------------------"
         << std::endl << std::flush;
 
-    //Print size of the array
+    //Print size of array
     std::cout << "Size of Array: " << *arr_size 
         << std::endl << std::flush; 
 
