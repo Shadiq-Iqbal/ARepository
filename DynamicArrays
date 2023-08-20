@@ -15,9 +15,19 @@ int main()
         if(p_scores[i] == 0) {
             break;
         } else {
-            std::cout << p_scores[i] << ", " << std::flush;   
+            //Print the value of the element
+            std::cout << "Value of element " << i << ": " 
+                << p_scores[i] << std::endl << std::flush;
         }
     }
+    
+    //Print a barrier
+    std::cout << "-------------------------------"
+        << std::endl << std::flush;
+
+    //Print size of the array
+    std::cout << "Size of Array: " << *arr_size 
+        << std::endl << std::flush; 
 
     //Delete arr size
     delete arr_size;
